@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ludo Game</title>
+    <script src="ludo.js" defer></script>
+    <link rel="stylesheet" href="../src/output.css" />
+  </head>
+  <body class="bg-green-200 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-6 rounded-xl shadow-lg text-center w-full max-w-sm">
+      <h1 class="text-3xl font-bold mb-6">🎲 Ludo Game</h1>
+
+      <div id="dice" class="text-8xl mb-4 transition-transform duration-300">
+        🎲
+      </div>
+
+      <button
+        onclick="ludoNumberOnClick()"
+        class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 text-lg hover:cursor-pointer"
+      >
+        Start Game
+      </button>
+
+      <p id="result" class="mt-4 text-xl font-semibold text-gray-700"></p>
+    </div>
+  </body>
+</html>
