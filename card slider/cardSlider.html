@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Afghanistan card slider</title>
+    <link rel="stylesheet" href="../src/output.css" />
+    <style>
+      .flip-card-inner {
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+      }
+      .flipped {
+        transform: rotateY(180deg);
+      }
+      .flip-card-front,
+      .flip-card-back {
+        backface-visibility: hidden;
+      }
+      .flip-card-back {
+        transform: rotateY(180deg);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 h-screen">
+    <div class="p-10">
+      <button id="name" class="bg-blue-700 p-2 text-white border hover:bg-blue-900 hover:cursor-pointer rounded-sm">
+        Show Card 1
+      </button>
+      <button
+        id="nameOne1"
+        class="bg-blue-700 p-2 text-white border hover:bg-blue-900 hover:cursor-pointer rounded-sm"
+      >
+        Show Card 2
+      </button>
+      <button
+        id="nameTwo2"
+        class="bg-blue-700 p-2 text-white border hover:bg-blue-900 hover:cursor-pointer rounded-sm"
+      >
+        Show Card 3
+      </button>
+    </div>
+    <div class="flex items-center justify-center">
+      <!-- card 1 -->
+      <div id="flipCard" class="w-80 hidden h-96 perspective cursor-pointer mr-4 ml-4">
+        <div id="card" class="flip-card-inner relative w-full h-full ">
+          <!-- Front Side -->
+          <div
+            class="flip-card-front absolute w-full h-full bg-white rounded-xl shadow-lg flex flex-col items-center justify-center p-4"
+          >
+            <img
+              src="FB_IMG_1741758910675.jpg"
+              alt="Afghanistan Flag"
+              class="w-80 h-56 mb-4 shadow"
+            />
+            <h2 class="text-xl font-bold text-gray-800">Card 1</h2>
+          </div>
+
+          <!-- Back Side -->
+          <div
+            class="flip-card-back absolute w-full h-full bg-blue-700 text-white rounded-xl shadow-lg p-4 flex flex-col justify-center items-center"
+          >
+            <h2 class="text-lg font-semibold mb-2">My Team (❤️ ω ❤️)</h2>
+            <p>
+              Afghanistan dolor sit amet, consectetur adipisicing elit. Animi
+              ratione consectetur adipisci a quod necessitatibus vero ullam
+              ipsam repellendus quos saepe accusamus sed earum ipsa, reiciendis
+              eius praesentium soluta obcaecati!
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- card 2 -->
+      <div
+        id="flipCardOne1"
+        class="w-80 hidden h-96 perspective cursor-pointer mr-4 ml-4"
+      >
+        <div id="cardOne1" class="flip-card-inner relative w-full h-full">
+          <!-- Front Side -->
+          <div
+            class="flip-card-front absolute w-full h-full bg-white rounded-xl shadow-lg flex flex-col items-center justify-center p-4"
+          >
+            <img
+              src="FB_IMG_1741758908197.jpg"
+              alt="Afghanistan Flag"
+              class="w-80 h-56 mb-4 shadow"
+            />
+            <h2 class="text-xl font-bold text-gray-800">Card 2</h2>
+          </div>
+
+          <!-- Back Side -->
+          <div
+            class="flip-card-back absolute w-full h-full bg-blue-700 text-white rounded-xl shadow-lg p-4 flex flex-col justify-center items-center"
+          >
+            <h2 class="text-lg font-semibold mb-2">My Team (❤️ ω ❤️)</h2>
+            <p>
+              Afghanistan dolor sit amet, consectetur adipisicing elit. Animi
+              ratione consectetur adipisci a quod necessitatibus vero ullam
+              ipsam repellendus quos saepe accusamus sed earum ipsa, reiciendis
+              eius praesentium soluta obcaecati!
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- card 3 -->
+       <div
+        id="flipCardTwo2"
+        class="w-80 hidden h-96 perspective cursor-pointer mr-4 ml-4"
+      >
+        <div id="cardTwo2" class="flip-card-inner relative w-full h-full">
+          <!-- Front Side -->
+          <div
+            class="flip-card-front absolute w-full h-full bg-white rounded-xl shadow-lg flex flex-col items-center justify-center p-4"
+          >
+            <img
+              src="FB_IMG_1741758902340.jpg"
+              alt="Afghanistan Flag"
+              class="w-80 h-56 mb-4 shadow"
+            />
+            <h2 class="text-xl font-bold text-gray-800">Card 3</h2>
+          </div>
+
+          <!-- Back Side -->
+          <div
+            class="flip-card-back absolute w-full h-full bg-blue-700 text-white rounded-xl shadow-lg p-4 flex flex-col justify-center items-center"
+          >
+            <h2 class="text-lg font-semibold mb-2">My Team (❤️ ω ❤️)</h2>
+            <p>
+              Afghanistan dolor sit amet, consectetur adipisicing elit. Animi
+              ratione consectetur adipisci a quod necessitatibus vero ullam
+              ipsam repellendus quos saepe accusamus sed earum ipsa, reiciendis
+              eius praesentium soluta obcaecati!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // card 1
+      const flipCard = document.getElementById("flipCard");
+      const card = document.getElementById("card");
+      const name1 = document.getElementById("name");
+      // card 2
+      const flipCardOne1 = document.getElementById("flipCardOne1");
+      const cardOne1 = document.getElementById("cardOne1");
+      const nameOne1 = document.getElementById("nameOne1");
+      // card 3
+      const flipCardTwo2 = document.getElementById("flipCardTwo2");
+      const cardTwo2 = document.getElementById("cardTwo2");
+      const nameTwo2 = document.getElementById("nameTwo2");
+
+      function flipCardOne() {
+        card.classList.toggle("flipped");
+      }
+      flipCard.addEventListener("click", flipCardOne);
+
+      function cards() {
+        flipCard.classList.toggle("hidden");
+      }
+      name1.addEventListener("click", cards);
+
+      // card 2
+      function flipCardOne_1() {
+        cardOne1.classList.toggle("flipped");
+      }
+      flipCardOne1.addEventListener("click", flipCardOne_1);
+
+      function cardsOne_1() {
+        flipCardOne1.classList.toggle("hidden");
+      }
+      nameOne1.addEventListener("click", cardsOne_1);
+      // card 3
+      function flipCardOne_3() {
+        cardTwo2.classList.toggle("flipped");
+      }
+      flipCardTwo2.addEventListener("click", flipCardOne_3);
+
+      function cardsOne_3() {
+        flipCardTwo2.classList.toggle("hidden");
+      }
+      nameTwo2.addEventListener("click", cardsOne_3);
+    </script>
+  </body>
+</html>

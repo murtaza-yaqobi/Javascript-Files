@@ -12,16 +12,15 @@ function rolesOne() {
 function numberGame() {
   let computerChoice = Math.random() * 100;
   let userChoice = parseFloat(inputNumber.value);
-
-  if (computerChoice > userChoice) {
+  if (userChoice > 100) {
+    result.textContent = "something went wrong";
+  } else if (computerChoice > userChoice) {
     result.textContent = "💻 Computer Won!";
   } else if (userChoice > computerChoice) {
     result.textContent = "🫵 You Won!";
-  }
-  else if(inputNumber.value == ""){
+  } else if (inputNumber.value == "") {
     result.textContent = "❌ You don't enter a number";
-  }
-  else {
+  } else {
     result.textContent = "📍 You are Draw!";
   }
 }
