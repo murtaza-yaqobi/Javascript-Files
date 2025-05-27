@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="../src/output.css" />
+  </head>
+  <body
+    class="bg-gradient-to-br from-blue-500 to-purple-600 min-h-screen flex items-center justify-center"
+  >
+  
+    <div class="bg-white p-8 rounded-xl shadow-md w-full max-w-sm">
+      <h2 class="text-2xl font-bold text-center mb-6">Login Page</h2>
+
+      <form onsubmit="handleLogin(event)">
+        <div class="mb-4">
+          <label class="block text-gray-700 mb-1">Email</label>
+          <input
+            id="email"
+            type="email"
+            class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+            required
+          />
+        </div>
+
+        <div class="mb-6">
+          <label class="block text-gray-700 mb-1">Password</label>
+          <input
+            id="password"
+            type="password"
+            class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+            required
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+        >
+          Login
+        </button>
+      </form>
+
+      <p id="message" class="mt-4 text-center text-red-500 font-semibold"></p>
+    </div>
+
+    <script>
+      function handleLogin(event) {
+        event.preventDefault();
+
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+        const message = document.getElementById("message");
+
+        if (email === "murtazayaqobi7@gmail.com" && password === "1234566") {
+          message.textContent = "✅ Login successful!";
+          message.classList.remove("text-red-500");
+          message.classList.add("text-green-500");
+        } else {
+          message.textContent = "❌ Your email or password is incorrect!";
+          message.classList.remove("text-green-500");
+          message.classList.add("text-red-500");
+        }
+      }
+    </script>
+  </body>
+</html>
