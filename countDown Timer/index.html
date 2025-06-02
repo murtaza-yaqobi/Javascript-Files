@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="../src/output.css" />
+  </head>
+  <body
+    dir="rtl"
+    class="bg-gray-100 h-screen w-full flex justify-center items-center"
+  >
+    <section
+      id="main_timer"
+      class="bg-white px-6 py-7 h-fit w-[40%] border rounded-sm"
+    >
+      <form>
+        <input
+          id="title"
+          type="text"
+          placeholder="لطفا موضوعی تایمر را انتخاب کنید"
+          class="w-full text-2xl mb-2 p-3.5 rounded-sm border bg-gray-100"
+        />
+        <input
+          id="time_date"
+          class="w-full text-2xl mb-2 p-3.5 rounded-sm border bg-gray-100"
+          type="datetime-local"
+        />
+        <button
+          id="btn_start"
+          class="w-full text-white font-bold text-2xl p-3.5 rounded-sm border bg-blue-700 hover:cursor-pointer hover:bg-blue-900"
+        >
+          شروع تایمر
+        </button>
+      </form>
+    </section>
+    <section
+      id="show_timer"
+      class="bg-white px-6 py-7 hidden h-fit w-[40%] border rounded-sm"
+    >
+      <h1 id="show_title" class="text-2xl text-center mb-3.5"></h1>
+      <div class="flex justify-center items-center gap-3.5">
+        <div class="border text-center p-3.5 rounded-sm text-2xl bg-gray-100">
+          <h1 id="days" class="text-white p-3.5 bg-blue-700 mb-2">روز</h1>
+          <h2 class="text-black">0</h2>
+        </div>
+        <div
+          id="hours"
+          class="border bg-gray-100 text-center p-3.5 rounded-sm text-2xl"
+        >
+          <h1 class="text-white p-3.5 bg-blue-700 mb-2">ساعت</h1>
+          <h2 class="text-black">0</h2>
+        </div>
+        <div class="border bg-gray-100 text-center p-3.5 rounded-sm text-2xl">
+          <h1 id="minuts" class="text-white p-3.5 bg-blue-700 mb-2">دقیقه</h1>
+          <h2 class="text-black">0</h2>
+        </div>
+        <div class="border bg-gray-100 text-center p-3.5 rounded-sm text-2xl">
+          <h1 id="seconds" class="text-white p-3.5 bg-blue-700 mb-2">ثانیه</h1>
+          <h2 class="text-black">0</h2>
+        </div>
+      </div>
+    </section>
+    <script>
+      const timer = document.getElementById("main_timer");
+      const showTimer = document.getElementById("show_timer");
+      const title = document.getElementById("title");
+      const btn = document.getElementById("btn_start");
+      let timerInterval;
+      btn.addEventListener("click", () => {
+        timer.classList.add("hidden");
+        showTimer.classList.remove("hidden");
+        showTimer.classList.add("flex");
+
+        const choosedTime = document.getElementById("time_date");
+        const target = new Date(choosedTime.value);
+        timerInterval = setInterval(() => {
+          const date = new Date();
+          let diffrence = target - date;
+          console.log(diffrence);
+          if (isNaN(diffrence)) {
+            return;
+          }
+          if (diffrence <= 0) {
+            return;
+          }
+          let seconds = (diffrence / 1000) % 60;
+          let minuts = (diffrence / 1000 / 60) % 60;
+          let hours = (diffrence / (1000 * 60 * 60)) % 24;
+          let days = diffrence / (1000 * 60 * 60 * 24);
+          document.getElementById("seconds").textContent = seconds;
+          document.getElementById("minuts").textContent = minuts;
+          document.getElementById("hours").textContent = hours;
+          document.getElementById("days").textContent = days;
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
