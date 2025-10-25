@@ -83,7 +83,8 @@ for (let i = 0; i < like2Buttons.length; i++) {
     }
   });
 }
-// 3
+// 3 div
+// 3 div
 for (let i = 0; i < like3Buttons.length; i++) {
   const btn = like3Buttons[i];
   const wrapper = btn.parentElement;
