@@ -124,3 +124,4 @@ smimg[4].onclick = () => {
 smimg[5].onclick = () => {
   MainIMG.src = smimg[5].src;
 };
+
