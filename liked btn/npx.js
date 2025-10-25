@@ -23,7 +23,7 @@ for (let i = 0; i < likeButtons.length; i++) {
     }
   });
 }
-// liked
+// liked btn
 for (let i = 0; i < likedButtons.length; i++) {
   const btn = likedButtons[i];
   const wrapper = btn.parentElement;
